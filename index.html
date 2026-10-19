@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>현장실습 지원 안내</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -217,9 +222,7 @@ function contactHtml() {
 }
 
 // 지원할 수 없는 경우. 하나라도 해당하면 모두 안내합니다.
-const BLOCKS = [
-  { when: a => a.status === 'leave', msg: '휴학생은 현장실습에 지원할 수 없습니다.' }
-];
+const BLOCKS = [];
 // 센터 문의가 필요한 경우
 function needsContact(a) { return a.status === 'graduating' && (a.term === 'summer' || a.term === 'winter'); }
 
@@ -422,3 +425,5 @@ $('q').addEventListener('change', e => {
 $('q').addEventListener('submit', e => { e.preventDefault(); showResult(true); });
 if (QUESTIONS.every(q => answers[q.id])) showResult(false);
 </script>
+</body>
+</html>
